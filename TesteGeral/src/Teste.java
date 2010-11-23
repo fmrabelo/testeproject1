@@ -4,10 +4,25 @@ import java.util.StringTokenizer;
 
 public class Teste
 {
-
 	public static void main (String arg[])
 	{
-		fmtDb();
+		printf_();
+		// fmtDb();
+		System.exit(0);
+	}
+
+	public static void printf_ ()
+	{
+		// Sempre que usar o System.out.printf deve-se utilizar ou %d para
+		// inteiro, %s para String e %.2f para double.
+		String a = "Teste";
+		double b = 459882701;
+		int c = 898899801;
+		System.out.printf("%s - %.2f - %d \n", a, b, c);
+
+		System.out.print("carregando printf_() ... ");
+		long tempo = System.currentTimeMillis();
+		System.out.printf("Ok. Tempo carga: %d %s ", (System.currentTimeMillis() - tempo), "ms");
 	}
 
 	public static void mod ()
