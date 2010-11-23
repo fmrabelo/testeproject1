@@ -1,0 +1,26 @@
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  
+  <persistence-unit name="unitJbossTeste" transaction-type="JTA">
+		
+		<description>Configuração para aplicação teste jboss5.0.1</description>
+    	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>java:/ORAFERTIDS</jta-data-source>
+
+      <!--class>org.eclipse.persistence.example.unified.business.StatClass</class-->
+      <properties>
+        <!-- deprecated property name="eclipselink.server.platform.class.name" value="JBoss"/-->
+        <property name="eclipselink.target-server" value="JBoss"/>
+        <property name="eclipselink.weaving" value="false"/>
+        <property name="eclipselink.session-name" value="default-session"/>            
+        <!--property name="eclipselink.session.customizer" value="org.eclipse.persistence.example.unified.integration.JPAEclipseLinkSessionCustomizer"/-->
+        <property name="eclipselink.logging.level" value="FINEST"/>
+        <property name="eclipselink.cache.size.default" value="500"/>
+        <property name="eclipselink.cache.type.default" value="Full"/>
+        <!--property name="eclipselink.orm.throw.exceptions" value="false"/-->
+      </properties>       
+    
+  </persistence-unit>
+    
+</persistence>
+
+
