@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+	<persistence-unit name="unitJbossTeste" transaction-type="JTA">
+		
+		<description>
+			Configuração para aplicação sisfer Fertipar.
+		</description>
+		
+		<jta-data-source>java:/ORAFERTIDS</jta-data-source>		
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!--provider>oracle.toplink.essentials.ejb.cmp3.EntityManagerFactoryProvider</provider-->
+		<!--provider>oracle.toplink.essentials.PersistenceProvider</provider--> 
+		
+		<!--exclude-unlisted-classes>false</exclude-unlisted-classes-->
+		
+	    <!--properties-->
+	        <!--property name="toplink.logging.level" value="INFO"/-->
+	        <!--property name="toplink.jdbc.driver" value="oracle.jdbc.OracleDriver"/-->
+	        <!--property name="toplink.jdbc.url" value="jdbc:oracle:thin:@192.168.141.16:1528:TEST10gMTZ"/-->
+	        <!--property name="toplink.jdbc.password" value="ias"/-->
+	        <!--property name="toplink.jdbc.user" value="ias"/-->
+	    <!--/properties-->
+		  
+		<!--properties-->
+			<!--property name="toplink.logging.level" value="INFO"/-->			
+			<!--property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" /-->
+			<!--property name="hibernate.hbm2ddl.auto" value="validate" /-->
+			<!--property name="hibernate.cache.use_second_level_cache" value="true" /-->
+		<!--/properties-->
+		
+	</persistence-unit>
+</persistence>
+
+

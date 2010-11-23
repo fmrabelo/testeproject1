@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<local-tx-datasource>
+		<jndi-name>ORAFERTIDS</jndi-name>
+		<connection-url>
+			jdbc:oracle:thin:@192.168.141.16:1528:TEST10gMTZ
+		</connection-url>
+		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+		<user-name>ias</user-name>
+		<password>ias</password>
+		<min-pool-size>6</min-pool-size>
+		<max-pool-size>20</max-pool-size>
+		<idle-timeout-minutes>3</idle-timeout-minutes>
+	</local-tx-datasource>
+
+</datasources>
