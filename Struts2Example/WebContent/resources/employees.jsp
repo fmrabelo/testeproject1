@@ -22,6 +22,13 @@
         <td>
          	<s:a href="%{insert}">Click Here to Add New Employee</s:a>
         </td>
+        
+        <s:url id="rel" action="myJasperTestPDF"/>
+		<td>
+         	<s:a href="%{rel}">Click Here to Jasper</s:a>
+        </td>
+                
+        
     </tr>
 </table><br/>
 	
