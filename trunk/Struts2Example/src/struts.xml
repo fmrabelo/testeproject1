@@ -4,8 +4,21 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+   
    <include file="struts-default.xml"/>
-     <package name="default" extends="struts-default">
+   <include file="jasperreports-default.xml"/>
+   	
+     <package name="default" extends="struts-default, jasperreports-default.xml">
+   		<action name="myJasperTestPDF" method="jasperAction" class="net.learntechnology.struts2demo.action.EmployeeAction">
+            <result name="success" type="jasper">
+            	<param name="location">/resources/employee.jasper</param>
+            	<param name="dataSource">employees</param>
+            	<param name="format">PDF</param>
+            	<param name="contentDisposition">attachment;filename="laudoOnLine.pdf"</param>  
+            	<param name="documentName">listEmployees</param>
+			</result>   		
+   		</action>
+
         <action name="getAllEmployees" method="getAllEmployees" class="net.learntechnology.struts2demo.action.EmployeeAction">
             <result>/resources/employees.jsp</result>
         </action>
