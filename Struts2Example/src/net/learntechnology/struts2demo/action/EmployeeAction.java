@@ -32,6 +32,7 @@ public class EmployeeAction
 
 	public String jasperAction ()
 	{
+		this.getAllEmployees();
 		if ((employees != null) && employees.isEmpty())
 		{
 			System.out.println("Lista employee para Jasper ok: " + employees.size());
