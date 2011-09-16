@@ -30,6 +30,15 @@ public class EmployeeAction
 	private List<Employee> employees;
 	private List<Department> departments;
 
+	public String jasperAction ()
+	{
+		if ((employees != null) && employees.isEmpty())
+		{
+			System.out.println("Lista employee para Jasper ok: " + employees.size());
+		}
+		return Action.SUCCESS;
+	}
+
 	public String getAllEmployees ()
 	{
 		employees = empService.getAllEmployees();
@@ -82,19 +91,21 @@ public class EmployeeAction
 
 	private boolean validationSuccessful ()
 	{
+		String err = "? é campo obrigatório!!";
 		if ((employee.getFirstName() == null) || (employee.getFirstName().trim().length() < 1))
 		{
-			this.addActionMessage("FirstName is required");
+			this.addActionMessage(err.replace("?", "Primeiro Nome"));
 		}
 		if ((employee.getLastName() == null) || (employee.getLastName().trim().length() < 1))
 		{
-			this.addActionMessage("LastName is required");
+			this.addActionMessage(err.replace("?", "Último Nome"));
 		}
 		if (employee.getAge() != null)
 		{
 			if ((employee.getAge() > 90) || (employee.getAge() < 15))
 			{
-				this.addActionMessage("Make sure the age U input is correct");
+				this.addActionMessage(err.replace("?",
+				    "O Campo idade deve estar entre 15 e 90 anos e"));
 			}
 		}
 		if (this.hasActionMessages())
