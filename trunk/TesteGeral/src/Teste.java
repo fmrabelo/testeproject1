@@ -1,14 +1,80 @@
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.StringTokenizer;
 
-public class Teste
+import javax.swing.JOptionPane;
+
+public final class Teste
 {
 	public static void main (String arg[])
 	{
-		printf_();
+		// String vlr = "1.234.567.890";
+		// vlr = vlr.replace(".", "").trim();
+		// Double d = new Double(vlr);
+		// System.out.println(d);
+		// printf_();
 		// fmtDb();
+
+		// new Teste().contains();
+		new Teste().flush();
 		System.exit(0);
+	}
+
+	void flush ()
+	{
+		Integer[] f = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+		List<Integer> t = Arrays.asList(f);
+		Collections.shuffle(t);
+		System.out.print(t);
+		StringBuilder ret = new StringBuilder("");
+		for (int x = t.size() - 1; x > 3; x--)
+		{
+			ret.append(t.get(x));
+		}
+		System.out.println(": > " + ret);
+	}
+
+	void contains ()
+	{
+		String nome[] = {"wewer CERATOSCOPIA  wer COMPUTADORIZADA wer",
+		    "MICROSCOPIA ESPECULAR DE CÓRNEA", "OCT RETINA", "CAMPIMETRIA",
+		    "CURVA TENSIONAL DIÁRIA", "CERATOSCOPIA COMPUTADORIZADA",
+		    "MICROSCOPIA ESPECULAR DE CÓRNEA", "MICROSCOPIA ESPECULAR DE CÓRNEA CERATOSCOPIA wsd",
+		    " asd CERATOSCOPIA COMPUTADORIZADA",
+		    "wewewwewe   CERATOSCOPIA we we CERATOSCOPIA COMPUTADORIZADA",
+		    " ew MICROSCOPIA  w ESPECULAR DE  wew CÓRNEA", "v xMaster as", "xoaf Master as",
+		    "CERATOSCOPIA COMPUTADORIZADA"};
+		String contain[] = {"ceratoscopia", "campimetria", "Iol Master"};
+		for (String x : nome)
+		{
+			for (String z : contain)
+			{
+				if (x.toLowerCase().contains(z.toString().toLowerCase()))
+				{
+					System.out.println(x + " > " + z);
+				}
+			}
+		}
+		// JOptionPane.showMessageDialog(null, str);
+	}
+
+	void teste ()
+	{
+		String str = "A casa da praia está em reforma.";
+		str.replace("a", "");
+		System.out.println(str);
+		JOptionPane.showMessageDialog(null, str);
+	}
+
+	void teste1 ()
+	{
+		final Double d = (1.65d);
+		final Double d1 = (1.65d);
+		System.out.println(d == d1);
+		System.out.println(d.compareTo(d1));
 	}
 
 	public static void printf_ ()
@@ -22,7 +88,9 @@ public class Teste
 
 		System.out.print("carregando printf_() ... ");
 		long tempo = System.currentTimeMillis();
-		System.out.printf("Ok. Tempo carga: %d %s ", (System.currentTimeMillis() - tempo), "ms");
+		System.out.printf("Ok. Tempo carga: %s %s ", (System.currentTimeMillis() - tempo), "ms");
+
+		System.out.println(" teste 2: " + (a + " teste 3"));
 	}
 
 	public static void mod ()
